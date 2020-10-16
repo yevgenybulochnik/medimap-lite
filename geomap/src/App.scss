@@ -1,3 +1,16 @@
+@import '~@blueprintjs/core/lib/css/blueprint.css';
+
 .App {
+
+  .content {
+    padding: 1em;
+    & > * {
+      margin-top: 1em;
+    }
+  }
+
+  .geomap-card {
+    height: 500px;
+  }
 
 }
