@@ -1,10 +1,10 @@
 import React from 'react'
 import { MenuItem, FormGroup } from '@blueprintjs/core'
 import { ItemRenderer, ItemPredicate, Suggest } from '@blueprintjs/select'
+import './hcpcsCodeSuggest.scss'
 
 
 interface HcpcsCode {
-  id: string;
   code: string;
   description: string;
 }
@@ -14,13 +14,21 @@ const HcpcsCodeRenderer: ItemRenderer<HcpcsCode> = (hcpcsCode, { handleClick, mo
     return null
   }
 
+  function renderDescription(desc: string) {
+    if (desc.length > 100) {
+      return `${desc.slice(0,100)}...`
+    } else {
+      return desc
+    }
+  }
+
   return (
     <MenuItem
       active={modifiers.active}
-      id={hcpcsCode.id}
-      key={hcpcsCode.id}
-      label={hcpcsCode.code}
-      text={hcpcsCode.description}
+      id={hcpcsCode.code}
+      key={hcpcsCode.code}
+      label={renderDescription(hcpcsCode.description)}
+      text={hcpcsCode.code}
       onClick={handleClick}
     />
   )
@@ -33,7 +41,7 @@ const hcpcsCodeFilter: ItemPredicate<HcpcsCode> = (query, hcpcsCode) => {
 interface Props {
   hcpcsCodeItems: HcpcsCode[];
   selectedhcpcsCodeItems: HcpcsCode[];
-  onItemSelect: () => void;
+  onItemSelect: (item: HcpcsCode) => void;
 }
 
 const HcpcsCodeSelect = Suggest.ofType<HcpcsCode>()
@@ -55,7 +63,7 @@ const HcpcsCodeSuggest: React.SFC<Props> = (props) => {
         resetOnSelect
         itemRenderer={HcpcsCodeRenderer}
         itemPredicate={hcpcsCodeFilter}
-        inputValueRenderer={(item) => item.description}
+        inputValueRenderer={(item) => `${item.code} - ${item.description}`}
         onItemSelect={onItemSelect}
         noResults={<MenuItem text='No Results' disabled />}
         fill
