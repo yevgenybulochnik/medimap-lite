@@ -1,3 +1,4 @@
 data/
 .vim/
 geocodio.key
+__pycache__/
