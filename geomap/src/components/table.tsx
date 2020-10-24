@@ -100,53 +100,51 @@ const Table: React.SFC<Props> = (props) => {
   }, useSortBy, usePagination, useFlexLayout)
 
   return (
-    <Card elevation={Elevation.TWO}>
-      <Wrapper>
-        <TableContainer {...getTableProps()}>
-          <Thead>
-            {headerGroups.map((headerGroup: any) => (
-            <Tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column: any) => (
-                <Th {...column.getHeaderProps({align: column.align})}>
-                  <span {...column.getSortByToggleProps()}>
-                    {column.render('Header')}
-                    <span style={{marginLeft: '4px'}}>
-                      {column.isSorted ? column.isSortedDesc ? <Icon icon='sort-desc' color='grey'/> : <Icon icon='sort-asc' color='grey' /> : '' }
-                    </span>
+    <Wrapper>
+      <TableContainer {...getTableProps()}>
+        <Thead>
+          {headerGroups.map((headerGroup: any) => (
+          <Tr {...headerGroup.getHeaderGroupProps()}>
+            {headerGroup.headers.map((column: any) => (
+              <Th {...column.getHeaderProps({align: column.align})}>
+                <span {...column.getSortByToggleProps()}>
+                  {column.render('Header')}
+                  <span style={{marginLeft: '4px'}}>
+                    {column.isSorted ? column.isSortedDesc ? <Icon icon='sort-desc' color='grey'/> : <Icon icon='sort-asc' color='grey' /> : '' }
                   </span>
-                </Th>
-              ))}
-            </Tr>
-          ))}
-          </Thead>
-          <Tbody {...getTableBodyProps()} height={height}>
-            <PerfectScrollbar>
-              {page.map((row: any) => {
-                prepareRow(row)
-                return (
-                  <Tr {...row.getRowProps()} onClick={() => onRowClick(data[row.index])}>
-                    {row.cells.map((cell: any) => (
-                      <Td {...cell.getCellProps({align: cell.column.align})}>
-                        {cell.render('Cell')}
-                      </Td>
-                    ))}
-                </Tr>
-                )
-              })}
-            </PerfectScrollbar>
-          </Tbody>
-          <Pagination>
-            <Button style={{flex: 1}} minimal fill onClick={previousPage} disabled={!canPreviousPage}>Previous</Button>
-            <PageInfo>
-              <PageInfoItem>{pageIndex + 1}</PageInfoItem>
-              <PageInfoItem>/</PageInfoItem>
-              <PageInfoItem>{pageCount}</PageInfoItem>
-            </PageInfo>
-            <Button style={{flex: 1}} minimal fill onClick={nextPage} disabled={!canNextPage}>Next</Button>
-          </Pagination>
-        </TableContainer>
-      </Wrapper>
-    </Card>
+                </span>
+              </Th>
+            ))}
+          </Tr>
+        ))}
+        </Thead>
+        <Tbody {...getTableBodyProps()} height={height}>
+          <PerfectScrollbar>
+            {page.map((row: any) => {
+              prepareRow(row)
+              return (
+                <Tr {...row.getRowProps()} onClick={() => onRowClick(data[row.index])}>
+                  {row.cells.map((cell: any) => (
+                    <Td {...cell.getCellProps({align: cell.column.align})}>
+                      {cell.render('Cell')}
+                    </Td>
+                  ))}
+              </Tr>
+              )
+            })}
+          </PerfectScrollbar>
+        </Tbody>
+        <Pagination>
+          <Button style={{flex: 1}} minimal fill onClick={previousPage} disabled={!canPreviousPage}>Previous</Button>
+          <PageInfo>
+            <PageInfoItem>{pageIndex + 1}</PageInfoItem>
+            <PageInfoItem>/</PageInfoItem>
+            <PageInfoItem>{pageCount}</PageInfoItem>
+          </PageInfo>
+          <Button style={{flex: 1}} minimal fill onClick={nextPage} disabled={!canNextPage}>Next</Button>
+        </Pagination>
+      </TableContainer>
+    </Wrapper>
   )
 }
 
