@@ -47,7 +47,7 @@ class GeoMap extends React.Component<Props, {}> {
         scrollWheelZoom={false}
       >
         <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
-        <MarkerClusterGroup>
+        <MarkerClusterGroup maxClusterRadius={50}>
           {
             this.getLocations().map((location: any) => (
               <Marker
