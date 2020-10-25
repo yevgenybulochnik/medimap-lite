@@ -35,12 +35,14 @@ const HcpcsCodeRenderer: ItemRenderer<HcpcsCode> = (hcpcsCode, { handleClick, mo
 }
 
 const hcpcsCodeFilter: ItemPredicate<HcpcsCode> = (query, hcpcsCode) => {
-  return hcpcsCode.description.toLowerCase().indexOf(query.toLowerCase()) >= 0
+  if (isNaN(parseInt(query))) {
+    return hcpcsCode.description.toLowerCase().indexOf(query.toLowerCase()) >= 0
+  }
+  return hcpcsCode.code.indexOf(query) >= 0
 }
 
 interface Props {
   hcpcsCodeItems: HcpcsCode[];
-  selectedhcpcsCodeItems: HcpcsCode[];
   onItemSelect: (item: HcpcsCode) => void;
 }
 
@@ -49,7 +51,6 @@ const HcpcsCodeSelect = Suggest.ofType<HcpcsCode>()
 const HcpcsCodeSuggest: React.SFC<Props> = (props) => {
   const {
     hcpcsCodeItems,
-    selectedhcpcsCodeItems,
     onItemSelect,
   } = props
 
