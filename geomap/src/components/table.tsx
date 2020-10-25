@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import PerfectScrollbar from 'react-perfect-scrollbar'
-import { Card, Elevation, Button, Icon } from '@blueprintjs/core'
+import { Button, Icon } from '@blueprintjs/core'
 import { useTable, useFlexLayout, usePagination, useSortBy } from 'react-table'
 import 'react-perfect-scrollbar/dist/css/styles.css'
 
