@@ -22,7 +22,7 @@ const MarkerTable: React.SFC<Props> = (props) => {
       Header: 'Name',
       accessor: 'name',
       align: 'center',
-      width: 1,
+      width: 2,
     },
     {
       Header: 'Creds',
