@@ -70,6 +70,7 @@ interface Props {
   data: any;
   height: string;
   onRowClick: any;
+  paginate?: boolean;
 }
 
 const Table: React.SFC<Props> = (props) => {
@@ -77,7 +78,8 @@ const Table: React.SFC<Props> = (props) => {
     columns,
     data,
     height,
-    onRowClick
+    onRowClick,
+    paginate
   } = props
 
   const {
@@ -134,18 +136,24 @@ const Table: React.SFC<Props> = (props) => {
             })}
           </PerfectScrollbar>
         </Tbody>
-        <Pagination>
+        { paginate &&
+          <Pagination>
           <Button style={{flex: 1}} minimal fill onClick={previousPage} disabled={!canPreviousPage}>Previous</Button>
-          <PageInfo>
+            <PageInfo>
             <PageInfoItem>{pageIndex + 1}</PageInfoItem>
             <PageInfoItem>/</PageInfoItem>
             <PageInfoItem>{pageCount}</PageInfoItem>
-          </PageInfo>
+            </PageInfo>
           <Button style={{flex: 1}} minimal fill onClick={nextPage} disabled={!canNextPage}>Next</Button>
-        </Pagination>
+          </Pagination>
+        }
       </TableContainer>
     </Wrapper>
   )
+}
+
+Table.defaultProps = {
+  paginate: true,
 }
 
 export default Table
