@@ -3,6 +3,7 @@ import {
   Navbar,
   Card,
   Elevation,
+  Button,
 } from '@blueprintjs/core'
 import './App.scss';
 
@@ -30,12 +31,6 @@ function App() {
         </Group>
       </Navbar>
       <div className='content'>
-        <Card className='geomap-card' elevation={Elevation.TWO}>
-          <GeoMap
-            data={filteredData}
-            locationData={location_data}
-          />
-        </Card>
         <Card elevation={Elevation.TWO}>
           <HcpcsCodeSuggest
             hcpcsCodeItems={hcpcs_data}
@@ -49,6 +44,12 @@ function App() {
             }}
           />
         </Card>
+        <Card className='geomap-card' elevation={Elevation.TWO}>
+          <GeoMap
+            data={filteredData}
+            locationData={location_data}
+          />
+        </Card>
         <Card elevation={Elevation.TWO}>
           <ChargeTable
             data={filteredData}
@@ -57,6 +58,21 @@ function App() {
           />
         </Card>
       </div>
+      <footer>
+        <div className="icon-tray">
+          <Button minimal>
+            <a href="https://github.com/yevgenybulochnik">Github</a>
+          </Button>
+          <Button minimal>
+            <a href="https://linkedin.com/in/yevgeny-eugene-bulochnik-b429a6155">
+              LinkedIn
+            </a>
+          </Button>
+          <Button minimal>
+            <a href="https://yevgenybulochnik.com/contact">Contact</a>
+          </Button>
+        </div>
+      </footer>
     </div>
   );
 }

@@ -13,4 +13,22 @@
     height: 500px;
   }
 
+  footer {
+    width: 100%;
+    height: 5em;
+
+    .icon-tray {
+      border-top: solid 1px lightgrey;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      a {
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
 }
