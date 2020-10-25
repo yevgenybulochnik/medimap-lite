@@ -39,7 +39,6 @@ function App() {
         <Card elevation={Elevation.TWO}>
           <HcpcsCodeSuggest
             hcpcsCodeItems={hcpcs_data}
-            selectedhcpcsCodeItems={[]}
             onItemSelect={(item: any) => {
               const data = charge_data.filter((datum: any) => datum.code === item.code)
               const mergedData = data.map((datum: any) => {
