@@ -51,7 +51,7 @@ class GeoMap extends React.Component<Props, {}> {
                 icon={defaultMarkericon}
                 onClick={() => this.getMarkerData(location.id)}
               >
-                <Popup maxWidth={1000}>
+                <Popup maxWidth={1000} autoClose={false} closeOnClick={false}>
                   <div style={{width: '400px'}}>
                     <MarkerTable
                       data={this.getMarkerData(location.id)}
