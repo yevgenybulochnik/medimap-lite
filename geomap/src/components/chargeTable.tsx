@@ -30,27 +30,32 @@ const ChargeTable: React.SFC<Props> = (props) => {
           Header: 'NPI',
           accessor: 'npi',
           align: 'center',
+          width: 1,
         },
         {
           Header: 'Name',
           accessor: 'name',
           align: 'center',
+          width: 1,
         },
         {
           Header: 'Credentials',
           accessor: 'credentials',
           align: 'center',
+          width: 1,
         },
         {
           Header: 'Charge Amt',
           accessor: 'submittedCharge',
           align: 'center',
+          width: 1,
           Cell: (cell: any) => currencyFormatter.format(cell.value)
         },
         {
           Header: 'Medicare Reimb Amt',
           accessor: 'paymentAmt',
           align: 'center',
+          width: 1,
           Cell: (cell: any) => currencyFormatter.format(cell.value)
         }
       ]
