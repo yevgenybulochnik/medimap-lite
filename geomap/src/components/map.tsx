@@ -20,9 +20,9 @@ interface Props {
 
 class GeoMap extends React.Component<Props, {}> {
   state = {
-    lat: 45.5051,
-    lng: -122.6750,
-    zoom: 9,
+    lat: 44,
+    lng: -121,
+    zoom: 6,
     markerData: [],
   }
 
@@ -41,7 +41,11 @@ class GeoMap extends React.Component<Props, {}> {
   render() {
 
     return (
-      <Map center={[this.state.lat, this.state.lng]} zoom={this.state.zoom}>
+      <Map
+        center={[this.state.lat, this.state.lng]}
+        zoom={this.state.zoom}
+        scrollWheelZoom={false}
+      >
         <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
         <MarkerClusterGroup>
           {
