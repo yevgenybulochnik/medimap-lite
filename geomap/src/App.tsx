@@ -28,6 +28,25 @@ function App() {
         <Group>
           <Heading>Medimap-Lite</Heading>
           <Divider />
+          <div className='nav-icon'>
+            <a href="https://github.com/yevgenybulochnik">
+              <img src={process.env.PUBLIC_URL + '/github.png'} alt="github" />
+            </a>
+          </div>
+          <div className='nav-icon'>
+            <a href="https://www.linkedin.com/in/yevgeny-eugene-bulochnik-b429a6155/">
+              <img src={process.env.PUBLIC_URL + '/linkedin.png'} alt="linkedin" />
+            </a>
+          </div>
+          <div className='nav-icon'>
+            <a href="https://yevgenybulochnik.com">
+              <img
+                className='headshot'
+                src='https://assets.yevgenybulochnik.com/headshot.jpeg'
+                alt="home"
+              />
+            </a>
+          </div>
         </Group>
       </Navbar>
       <div className='content'>
