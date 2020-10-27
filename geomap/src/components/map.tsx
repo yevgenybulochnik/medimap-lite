@@ -9,8 +9,12 @@ import markerShadow from 'leaflet/dist/images/marker-shadow.png'
 
 const defaultMarkericon = L.icon({
   iconUrl: markerIcon,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
   shadowUrl: markerShadow,
-  popupAnchor: [12, 0],
+  shadowSize: [41, 41],
+  shadowAnchor: [12, 41],
+  popupAnchor: [0, -42],
 })
 
 interface Props {
