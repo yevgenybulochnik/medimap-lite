@@ -21,6 +21,8 @@ const { Heading, Divider, Group } = Navbar
 function App() {
 
   const [filteredData, setFilteredData] = useState([])
+  const [position, setPosition] = useState([44, -121])
+  const [zoom, setZoom] = useState(6)
 
   return (
     <div className="App">
@@ -65,6 +67,8 @@ function App() {
         </Card>
         <Card className='geomap-card' elevation={Elevation.TWO}>
           <GeoMap
+            position={position}
+            zoom={zoom}
             data={filteredData}
             locationData={location_data}
           />
@@ -73,7 +77,11 @@ function App() {
           <ChargeTable
             data={filteredData}
             height='300px'
-            onRowClick={() => console.log('test')}
+            onRowClick={(e: any) => {
+              const location = location_data.filter((loc: any) => loc.id === e.location_id)
+              setZoom(15)
+              setPosition(location[0].gps)
+            }}
           />
         </Card>
       </div>

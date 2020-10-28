@@ -20,15 +20,11 @@ const defaultMarkericon = L.icon({
 interface Props {
   data: any[];
   locationData: any[];
+  position: any;
+  zoom: number;
 }
 
 class GeoMap extends React.Component<Props, {}> {
-  state = {
-    lat: 44,
-    lng: -121,
-    zoom: 6,
-    markerData: [],
-  }
 
   getLocations() {
     const { data, locationData } = this.props
@@ -44,10 +40,15 @@ class GeoMap extends React.Component<Props, {}> {
 
   render() {
 
+    const {
+      position,
+      zoom,
+    } = this.props
+
     return (
       <Map
-        center={[this.state.lat, this.state.lng]}
-        zoom={this.state.zoom}
+        center={position}
+        zoom={zoom}
         scrollWheelZoom={false}
       >
         <TileLayer
