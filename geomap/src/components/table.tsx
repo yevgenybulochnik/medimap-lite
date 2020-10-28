@@ -8,7 +8,9 @@ import 'react-perfect-scrollbar/dist/css/styles.css'
 
 const Wrapper = styled.div`
   overflow: auto;
-  border: 1px solid #d4d3d3;
+  border-top: 1px solid #d4d3d3;
+  border-bottom: 1px solid #d4d3d3;
+  min-width: 500px;
 `
 
 const TableContainer = styled.div`

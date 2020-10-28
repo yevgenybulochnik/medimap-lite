@@ -9,6 +9,12 @@
     }
   }
 
+  .table-container {
+    overflow: auto;
+    border-left: 1px solid #d4d3d3;
+    border-right: 1px solid #d4d3d3;
+  }
+
   .geomap-card {
     height: 500px;
   }

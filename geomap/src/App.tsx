@@ -74,15 +74,17 @@ function App() {
           />
         </Card>
         <Card elevation={Elevation.TWO}>
-          <ChargeTable
-            data={filteredData}
-            height='300px'
-            onRowClick={(e: any) => {
-              const location = location_data.filter((loc: any) => loc.id === e.location_id)
-              setZoom(15)
-              setPosition(location[0].gps)
-            }}
-          />
+          <div className='table-container'>
+            <ChargeTable
+              data={filteredData}
+              height='300px'
+              onRowClick={(e: any) => {
+                const location = location_data.filter((loc: any) => loc.id === e.location_id)
+                setZoom(15)
+                setPosition(location[0].gps)
+              }}
+            />
+          </div>
         </Card>
       </div>
       <footer>
