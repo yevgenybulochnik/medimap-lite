@@ -6,11 +6,14 @@ import { useTable, useFlexLayout, usePagination, useSortBy } from 'react-table'
 import 'react-perfect-scrollbar/dist/css/styles.css'
 
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{minWidth?: string}>`
   overflow: auto;
-  border-top: 1px solid #d4d3d3;
-  border-bottom: 1px solid #d4d3d3;
-  min-width: 500px;
+  border: 1px solid #d4d3d3;
+  ${ props => props.minWidth && `
+    min-width: ${props.minWidth};
+    border-left: none;
+    border-right: none;
+  `}
 `
 
 const TableContainer = styled.div`
@@ -73,6 +76,7 @@ interface Props {
   height: string;
   onRowClick: any;
   paginate?: boolean;
+  minWidth?: string;
 }
 
 const Table: React.SFC<Props> = (props) => {
@@ -81,7 +85,8 @@ const Table: React.SFC<Props> = (props) => {
     data,
     height,
     onRowClick,
-    paginate
+    minWidth,
+    paginate,
   } = props
 
   const {
@@ -104,7 +109,7 @@ const Table: React.SFC<Props> = (props) => {
   }, useSortBy, usePagination, useFlexLayout)
 
   return (
-    <Wrapper>
+    <Wrapper minWidth={minWidth}>
       <TableContainer {...getTableProps()}>
         <Thead>
           {headerGroups.map((headerGroup: any) => (

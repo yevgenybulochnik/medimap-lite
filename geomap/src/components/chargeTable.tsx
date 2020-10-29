@@ -63,7 +63,7 @@ const ChargeTable: React.SFC<Props> = (props) => {
   ], [data])
 
   return (
-    <Table columns={columns} data={data} height={height} onRowClick={onRowClick}/>
+    <Table minWidth='500px' columns={columns} data={data} height={height} onRowClick={onRowClick}/>
   )
 }
 
