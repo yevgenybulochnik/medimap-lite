@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/medimap-lite/static/css/main.ed1198c7.chunk.css",
+    "main.js": "/medimap-lite/static/js/main.630ace65.chunk.js",
+    "main.js.map": "/medimap-lite/static/js/main.630ace65.chunk.js.map",
+    "runtime-main.js": "/medimap-lite/static/js/runtime-main.13cdaf5b.js",
+    "runtime-main.js.map": "/medimap-lite/static/js/runtime-main.13cdaf5b.js.map",
+    "static/css/2.b922babc.chunk.css": "/medimap-lite/static/css/2.b922babc.chunk.css",
+    "static/js/2.45dca819.chunk.js": "/medimap-lite/static/js/2.45dca819.chunk.js",
+    "static/js/2.45dca819.chunk.js.map": "/medimap-lite/static/js/2.45dca819.chunk.js.map",
+    "index.html": "/medimap-lite/index.html",
+    "precache-manifest.1da207e74da6f88e6fce2b312f03073a.js": "/medimap-lite/precache-manifest.1da207e74da6f88e6fce2b312f03073a.js",
+    "service-worker.js": "/medimap-lite/service-worker.js",
+    "static/css/2.b922babc.chunk.css.map": "/medimap-lite/static/css/2.b922babc.chunk.css.map",
+    "static/css/main.ed1198c7.chunk.css.map": "/medimap-lite/static/css/main.ed1198c7.chunk.css.map",
+    "static/js/2.45dca819.chunk.js.LICENSE.txt": "/medimap-lite/static/js/2.45dca819.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.13cdaf5b.js",
+    "static/css/2.b922babc.chunk.css",
+    "static/js/2.45dca819.chunk.js",
+    "static/css/main.ed1198c7.chunk.css",
+    "static/js/main.630ace65.chunk.js"
+  ]
+}
