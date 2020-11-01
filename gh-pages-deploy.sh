@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# Script to easily deploy to github pages
 echo -e "Removing Current build dir \n"
 rm -rf geomap/build
 
